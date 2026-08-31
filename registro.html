@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro | Guau & Miau</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+    />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+
+    <header>
+        <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
+        Guau
+        </nav>
+    </header>
+
+    <main>
+
+<form>
+
+    <fieldset>
+    <legend>Información del Dueño/a</legend>
+
+    <label for="nombre">Nombre completo:</label><br>
+    <input type="text" id="nombre" name="nombre"><br>
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="password">Contraseña:</label><br>
+    <input type="password" id="password" name="password"><br>
+
+    <label for="confirm_password">Confirmar contraseña:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password"><br>
+    
+    <label for="telefono">Teléfono:</label><br>
+    <input type="telefono" id="telefono" name="telefono"><br>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Información de la mascota</legend>
+
+    <label for="cantidad_mascotas">¿Cuántas mascotas desea registrar?</label><br>
+    <input type="number" id="cantidad_mascotas" name="cantidad_mascotas" min="1" max="5" value="1"><br>
+
+    <label for="especie">Especie de mascota:</label><br>
+        <select id="especie">
+            <optgroup label="Mamíferos">
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+            </optgroup>
+            <optgroup label="Aves">
+                <option value="loro">Loro</option>
+                <option value="cuervo">Cuervo</option>
+                <option value="lechuza">Lechuza</option>
+            </optgroup>
+            <optgroup label="Roedores">
+                <option value="rata">Rata</option>
+                <option value="hamster">Hamster</option>        
+            </optgroup>
+            <optgroup label="Otros">
+                <option value="otro">Criatura misteriosa</option>
+            </optgroup>
+        </select>
+        <br>
+
+    <label for="nom_mascota">Nombre mascota #1:</label><br>
+    <input type="text" id="nom_mascota" name="nom_mascota"><br>
+    </fieldset>
+    <br>
+    <input type="submit" value="Enviar">
+</form>
+
+    </main>
+  </body>
+</html>
