@@ -1,25 +1,28 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333333;
-    background-color: #f0f4f8;
-    line-height: 1.6;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    background-color: #2d6a4f;
-    color: #ffffff;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.min-vh-75 {
+    min-height: 75vh;
 }
 
-main {
-    max-width: 1200px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.login-card {
+    background-color: #f8f9fa;
+    border-color: #b0b0b0 !important;
+}
+
+.login-card .card-header {
+    background-color: #e2e2e2 !important;
+}
+
+.login-card input {
+    background-color: #ffffff;
+}
+
+.login-card button {
+    border-width: 2px;
 }
