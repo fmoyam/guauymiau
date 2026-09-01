@@ -1,3 +1,44 @@
+//Login
+const usuarios = new Map();
+
+usuarios.set("Felipe1", "ColoColo1")
+usuarios.set("Felipe2", "ColoColo2")
+usuarios.set("Javiera", "ColoColo3")
+
+
+const login = document.querySelector("#boton-ingresar");
+const labelUsuario = document.getElementById("emailInput"); 
+
+login.addEventListener("click", function () {
+  console.log("Hola, estos son los usuarios", usuarios)
+  console.log("Probando el usuario", labelUsuario.value)
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Registro
 const container = document.getElementById('mascotas-container');
 const cantidadInput = document.getElementById('cantidad_mascotas');
 
