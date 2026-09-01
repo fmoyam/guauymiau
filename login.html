@@ -20,10 +20,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="login.html">Login</a>
           </li>
           <li class="nav-item">
@@ -37,10 +37,41 @@
     <main class="d-flex justify-content-center align-items-center min-vh-75 py-5">
       <div class="card login-card border shadow-sm w-100" style="max-width: 450px">
         <div class="card-header text-center bg-secondary-subtle border-bottom py-2">
-          <span class="fw-bold text-dark">Bienvenido/a</span>
+          <span class="fw-bold text-dark">Inicio de Sesión</span>
         </div>
         <div class="card-body p-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <form>
+            <div class="mb-3">
+              <label
+                for="emailInput"
+                class="form-label text-uppercase fw-semibold small"
+                >CORREO:</label
+              >
+              <input type="email" class="form-control rounded-0 border-dark-subtle" id="emailInput" required/>
+            </div>
+
+            <div class="mb-4">
+              <label
+                for="passwordInput"
+                class="form-label text-uppercase fw-semibold small"
+                >CONTRASEÑA:</label
+              >
+              <input
+                type="password"
+                class="form-control rounded-0 border-dark-subtle"
+                id="passwordInput"
+                required
+              />
+            </div>
+
+            <div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary">
+                Ingresar
+              </button>
+              <a href="registro.html">
+                <button type="button" class="btn btn-secondary">Registrarse</button>
+              </a>
+            </div>
           </form>
         </div>
       </div>
