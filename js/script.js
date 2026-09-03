@@ -1,44 +1,5 @@
-//Login
-const usuarios = new Map();
+// ampliar registro segun cantidad de mascotas
 
-usuarios.set("Felipe1", "ColoColo1")
-usuarios.set("Felipe2", "ColoColo2")
-usuarios.set("Javiera", "ColoColo3")
-
-
-const login = document.querySelector("#boton-ingresar");
-const labelUsuario = document.getElementById("emailInput"); 
-
-login.addEventListener("click", function () {
-  console.log("Hola, estos son los usuarios", usuarios)
-  console.log("Probando el usuario", labelUsuario.value)
-  
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Registro
 const container = document.getElementById('mascotas-container');
 const cantidadInput = document.getElementById('cantidad_mascotas');
 
@@ -109,3 +70,87 @@ cantidadInput.addEventListener('input', function () {
 });
 
 generarMascotas(parseInt(cantidadInput.value, 10) || 1);
+
+// usuarios hardcodeados para login
+
+const usuarios = new Map();
+
+usuarios.set("felipe1@ejemplo.cl", {
+  password: "ColoColo",
+  nombre: "Felipe Fernandez",
+  telefono: "+56912345678",
+  mascotas: [
+    { especie: "perro", nombre: "TepoTepo" },
+    { especie: "gato", nombre: "YoNoFui" }
+  ]
+});
+
+// validar login
+
+const botonIngresar = document.getElementById('#boton-ingresar');
+if (botonIngresar) {
+  botonIngresar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('emailInput').value.trim();
+    const password = document.getElementById('passwordInput').value;
+
+    console.log("Email ingresado:", email);
+    console.log("Contraseña ingresada:", password);
+
+    if (!usuarios.has(email)) {
+      alert('Usuario no encontrado.');
+      return;
+    }
+
+    const usuario = usuarios.get(email);
+    if (usuario.password !== password) {
+      alert('Contraseña incorrecta.');
+      return;
+    }
+
+    let pets = "Mascotas de " + usuario.nombre + ":\n";
+    for (let i = 0; i < usuario.mascotas.length; i++) {
+      pets += (i + 1) + ". " + usuario.mascotas[i].especie + " - " + usuario.mascotas[i].nombre + "\n";
+    }
+    alert(pets);
+  });
+}
+
+// validacion registro 
+
+const mapaRegistro = new Map();
+
+let contadorRegistro = 1;
+
+const formRegistro = document.querySelector('form-registro');
+const inputNombre = document.querySelector('#nombreInput');
+const inputEmail = document.querySelector('#emailInput');
+const inputTelefono = document.querySelector('#telefonoInput');
+const inputPassword = document.querySelector('#passwordInput');
+const inputConfirmPassword = document.querySelector('#confirmPasswordInput');
+
+if (formRegistro) {
+  formRegistro.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+
+    const datosUsuario = [
+      inputNombre.value.trim(),
+      inputEmail.value.trim(),
+      inputTelefono.value.trim(),
+      inputPassword.value(),
+      inputConfirmPassword.value()
+    ];
+
+    const clave = `usuario_${contadorRegistros}`;
+    mapaRegistro.set(clave, datosUsuario);
+
+    alert(`Registro exitoso para ${datosUsuario[0]} con email ${datosUsuario[1]}.`);
+    console.log(`Clave: ${clave}`);
+    console.log("mapaRegistro.get:", mapaRegistro.get(clave));
+    console.log("mapaRegistro:", mapaRegistro);
+
+    contadorRegistro++;
+    formRegistro.reset();
+  });
+}
