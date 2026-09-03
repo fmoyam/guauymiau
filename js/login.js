@@ -4,23 +4,22 @@ usuarios.set("felip.fernandez@duocuc.cl", "ColoColo");
 usuarios.set("felip.moya@duocuc.cl", "Felipe");
 usuarios.set("javiera.banares@duocuc.cl", "Javiera");
 
-const formLogin = document.querySelector("#form-login");
+const Login = document.querySelector("#form-login");
 
-formLogin.addEventListener("submit", (e) => {
+Login.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const email = document.getElementById("emailInput").value.trim();
-  const password = document.getElementById("passwordInput").value;
+  const contra = document.getElementById("passwordInput").value;
 
-  
   if (!usuarios.has(email)) {
     alert("Usuario no encontrado.");
     return;
   }
 
-  const passwordCorrecta = usuarios.get(email);
+  const contraCorrecta = usuarios.get(email);
 
-  if (passwordCorrecta !== password) {
+  if (contraCorrecta !== contra) {
     alert("Contraseña incorrecta.");
     return;
   }
